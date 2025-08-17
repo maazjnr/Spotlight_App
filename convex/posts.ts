@@ -36,7 +36,7 @@ export const createPost = mutation({
         });
 
         await ctx.db.patch(currentUser._id, {
-            posts: currentUser.posts
+            posts: currentUser.posts + 1
         });
         
         return postId;

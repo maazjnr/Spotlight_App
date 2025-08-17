@@ -12,8 +12,6 @@ export const createUser = mutation({
         clerkId: v.string()
     },
 
-  
-
     handler: async(ctx, args) => {
 
         const existingUser = await ctx.db.query("users").withIndex('by_clerk_id', (q) => 
