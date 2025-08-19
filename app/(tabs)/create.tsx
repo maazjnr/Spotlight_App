@@ -194,15 +194,12 @@ export default function CreateScreen() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isSharing, setIsSharing] = useState(false);
 
-  // Animation setup for sharing overlay
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const spinAnim = useRef(new Animated.Value(0)).current;
 
-  // Animation setup for selected image
   const imageScaleAnim = useRef(new Animated.Value(0.8)).current;
   const imageOpacityAnim = useRef(new Animated.Value(0)).current;
 
-  // Start sharing animation
   useEffect(() => {
     if (isSharing) {
       Animated.parallel([
